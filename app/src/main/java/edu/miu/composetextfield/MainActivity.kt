@@ -36,7 +36,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeTextFieldTheme {
                 Scaffold { innerPadding ->
-                    Registration(innerPadding)
+                    Registration(
+                        modifier = Modifier.padding(innerPadding)
+                    )
                 }
             }
         }
@@ -44,11 +46,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Registration(innerPadding: PaddingValues, modifier: Modifier = Modifier.fillMaxWidth()) {
+fun Registration(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
-            .padding(innerPadding)
     ) {
 
         //remember is a function to remember the state across recomposition(UI rendering)
@@ -110,8 +111,6 @@ fun Registration(innerPadding: PaddingValues, modifier: Modifier = Modifier.fill
 @Composable
 fun GreetingPreview() {
     ComposeTextFieldTheme {
-        Registration(
-            innerPadding = PaddingValues(all = 0.dp)
-        )
+        Registration()
     }
 }
