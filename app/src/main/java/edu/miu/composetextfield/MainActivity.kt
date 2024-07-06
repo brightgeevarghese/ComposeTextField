@@ -109,7 +109,7 @@ fun Registration(modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun RegistrationPreview() {
     ComposeTextFieldTheme {
         Registration()
     }
